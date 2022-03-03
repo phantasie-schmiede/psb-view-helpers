@@ -18,6 +18,8 @@ namespace PSB\PsbViewHelpers\ViewHelpers\Variable;
 
 use JsonException;
 use PSB\PsbFoundation\Utility\StringUtility;
+use Psr\Container\ContainerExceptionInterface;
+use Psr\Container\NotFoundExceptionInterface;
 use TYPO3\CMS\Extbase\Configuration\Exception\InvalidConfigurationTypeException;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 use TYPO3Fluid\Fluid\Core\ViewHelper\Exception;
@@ -40,8 +42,10 @@ class ConvertStringViewHelper extends AbstractViewHelper
 
     /**
      * @return mixed
+     * @throws ContainerExceptionInterface
      * @throws InvalidConfigurationTypeException
      * @throws JsonException
+     * @throws NotFoundExceptionInterface
      */
     public function render()
     {
