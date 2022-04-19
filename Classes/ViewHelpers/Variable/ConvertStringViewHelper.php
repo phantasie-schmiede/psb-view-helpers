@@ -32,7 +32,7 @@ use TYPO3Fluid\Fluid\Core\ViewHelper\Exception;
 class ConvertStringViewHelper extends AbstractViewHelper
 {
     /**
-     * @throws Exception
+     * @return void
      */
     public function initializeArguments(): void
     {

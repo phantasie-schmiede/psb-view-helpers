@@ -20,6 +20,7 @@ use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 
 /**
  * Class LoopViewHelper
+ *
  * @package PSB\PsbViewHelpers\ViewHelpers
  */
 class LoopViewHelper extends AbstractViewHelper
@@ -36,6 +37,9 @@ class LoopViewHelper extends AbstractViewHelper
      */
     private array $variableBackups;
 
+    /**
+     * @return void
+     */
     public function initializeArguments(): void
     {
         parent::initializeArguments();
@@ -70,6 +74,8 @@ class LoopViewHelper extends AbstractViewHelper
 
     /**
      * @param array $variables
+     *
+     * @return void
      */
     private function backupVariables(array $variables): void
     {
@@ -84,6 +90,8 @@ class LoopViewHelper extends AbstractViewHelper
 
     /**
      * @param array $variables
+     *
+     * @return void
      */
     private function restoreVariables(array $variables): void
     {

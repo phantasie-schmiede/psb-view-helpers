@@ -23,7 +23,7 @@ use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 
 /**
- * Class GetClassNameViewHelper
+ * Class FileSizeViewHelper
  *
  * @package PSB\PsbViewHelpers\ViewHelpers\Format
  */
@@ -49,6 +49,9 @@ class FileSizeViewHelper extends AbstractViewHelper
         return FileUtility::formatFileSize($size, $arguments['unit'], $arguments['decimals']);
     }
 
+    /**
+     * @return void
+     */
     public function initializeArguments(): void
     {
         parent::initializeArguments();

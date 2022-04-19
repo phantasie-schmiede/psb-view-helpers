@@ -21,7 +21,7 @@
 		"sort-packages": true,
 		"vendor-dir": ".Build/vendor"
 	},
-	"description": "collection of useful ViewHelpers",
+	"description": "Collection of useful ViewHelpers",
 	"extra": {
 		"typo3/cms": {
 			"app-dir": ".Build",
@@ -36,11 +36,11 @@
 		"extension",
 		"typo3"
 	],
-	"license": "GPL-2.0-or-later",
+	"license": "GPL-3.0-or-later",
 	"name": "psb/psb-view-helpers",
 	"require": {
 		"php": "^7.4",
-		"psb/psb-foundation": "@dev"
+		"psb/psb-foundation": "^1.0"
 	},
 	"require-dev": {
 		"roave/security-advisories": "dev-latest",

@@ -23,6 +23,7 @@ use Psr\Container\ContainerExceptionInterface;
 use Psr\Container\NotFoundExceptionInterface;
 use TYPO3\CMS\Extbase\Configuration\Exception\InvalidConfigurationTypeException;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
+use function is_string;
 
 /**
  * Class MathViewHelper
@@ -31,6 +32,9 @@ use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
  */
 class MathViewHelper extends AbstractViewHelper
 {
+    /**
+     * @return void
+     */
     public function initializeArguments(): void
     {
         parent::initializeArguments();
@@ -65,17 +69,24 @@ class MathViewHelper extends AbstractViewHelper
 
         switch ($this->arguments['operator']) {
             case '+':
-                return $a + $b;
+                $result = $a + $b;
+                break;
             case '-':
-                return $a - $b;
+                $result = $a - $b;
+                break;
             case '*':
-                return $a * $b;
+                $result = $a * $b;
+                break;
             case '/':
-                return $a / $b;
+                $result = $a / $b;
+                break;
             case '**':
-                return $a ** $b;
+                $result = $a ** $b;
+                break;
             default:
                 throw new InvalidArgumentException(__CLASS__ . ': Operator not allowed!', 1558773161);
         }
+
+        return $result;
     }
 }

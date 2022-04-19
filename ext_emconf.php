@@ -16,7 +16,7 @@ $EM_CONF['psb_view_helpers'] = [
         'suggests'  => [
         ],
     ],
-    'description'      => 'collection of useful ViewHelpers',
+    'description'      => 'Collection of useful ViewHelpers',
     'state'            => 'stable',
     'title'            => 'PSbits | ViewHelpers',
     'version'          => '1.0.0',

@@ -17,6 +17,7 @@ declare(strict_types=1);
 namespace PSB\PsbViewHelpers\ViewHelpers\Condition;
 
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 
 /**
@@ -31,9 +32,13 @@ class ExtensionLoadedViewHelper extends AbstractViewHelper
      */
     protected $escapeOutput = false;
 
+    /**
+     * @return void
+     */
     public function initializeArguments(): void
     {
-        $this->registerArgument('extensionKey', 'string', 'Key of the extension which shall be checked.', true);
+        parent::initializeArguments();
+        $this->registerArgument('extensionKey', 'string', 'Key or name of the extension which shall be checked.', true);
     }
 
     /**
@@ -41,7 +46,7 @@ class ExtensionLoadedViewHelper extends AbstractViewHelper
      */
     public function render(): string
     {
-        if (ExtensionManagementUtility::isLoaded($this->arguments['extensionKey'])) {
+        if (ExtensionManagementUtility::isLoaded(GeneralUtility::camelCaseToLowerCaseUnderscored($this->arguments['extensionKey']))) {
             return $this->renderChildren();
         }
 

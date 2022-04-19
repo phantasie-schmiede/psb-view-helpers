@@ -19,6 +19,7 @@ namespace PSB\PsbViewHelpers\ViewHelpers\Variable;
 use InvalidArgumentException;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 use TYPO3Fluid\Fluid\Core\ViewHelper\Exception;
+use function is_array;
 
 /**
  * Class ArrayMergeViewHelper
@@ -28,7 +29,7 @@ use TYPO3Fluid\Fluid\Core\ViewHelper\Exception;
 class ArrayMergeViewHelper extends AbstractViewHelper
 {
     /**
-     * @throws Exception
+     * @return void
      */
     public function initializeArguments(): void
     {
@@ -38,6 +39,9 @@ class ArrayMergeViewHelper extends AbstractViewHelper
         $this->registerArgument('overwrite', 'boolean', 'overwrites the variable if already existing', false, false);
     }
 
+    /**
+     * @return void
+     */
     public function render(): void
     {
         $templateVariableContainer = $this->renderingContext->getVariableProvider();

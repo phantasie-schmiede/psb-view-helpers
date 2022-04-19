@@ -17,6 +17,7 @@ declare(strict_types=1);
 namespace PSB\PsbViewHelpers\ViewHelpers\Condition;
 
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
+use function in_array;
 
 /**
  * Class InArrayViewHelper
@@ -25,6 +26,9 @@ use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
  */
 class InArrayViewHelper extends AbstractViewHelper
 {
+    /**
+     * @return void
+     */
     public function initializeArguments(): void
     {
         parent::initializeArguments();

@@ -28,7 +28,7 @@ use TYPO3Fluid\Fluid\Core\ViewHelper\Exception;
 class IncrementViewHelper extends AbstractViewHelper
 {
     /**
-     * @throws Exception
+     * @return void
      */
     public function initializeArguments(): void
     {
@@ -37,6 +37,9 @@ class IncrementViewHelper extends AbstractViewHelper
         $this->registerArgument('variable', 'string', 'variable to be incremented', true);
     }
 
+    /**
+     * @return void
+     */
     public function render(): void
     {
         $templateVariableContainer = $this->renderingContext->getVariableProvider();
