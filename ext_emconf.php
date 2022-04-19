@@ -11,6 +11,7 @@ $EM_CONF[$_EXTKEY] = [
         'depends'   => [
             'php'            => '7.4',
             'psb_foundation' => '1.0',
+            'typo3'          => '11.5.5-11.5.99',
         ],
         'suggests'  => [
         ],

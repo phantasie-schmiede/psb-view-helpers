@@ -40,7 +40,8 @@
 	"name": "psb/psb-view-helpers",
 	"require": {
 		"php": "^7.4",
-		"psb/psb-foundation": "^1.0"
+		"psb/psb-foundation": "^1.0",
+		"typo3/cms-core": "^11.5.5"
 	},
 	"require-dev": {
 		"roave/security-advisories": "dev-latest",
