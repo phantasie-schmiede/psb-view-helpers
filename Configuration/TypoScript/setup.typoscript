@@ -1,0 +1,6 @@
+lib.tx_psbviewhelpers.content = RECORDS
+lib.tx_psbviewhelpers.content {
+  dontCheckPid = 1
+  source.current = 1
+  tables = tt_content
+}
