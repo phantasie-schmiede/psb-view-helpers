@@ -9,7 +9,7 @@ $EM_CONF[$_EXTKEY] = [
         'conflicts' => [
         ],
         'depends'   => [
-            'php'            => '7.4',
+            'php'            => '7.4-8.1',
             'psb_foundation' => '1.0',
             'typo3'          => '11.5.5-11.5.99',
         ],
