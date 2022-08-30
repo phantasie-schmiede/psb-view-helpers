@@ -39,7 +39,7 @@
 	"license": "GPL-3.0-or-later",
 	"name": "psb/psb-view-helpers",
 	"require": {
-		"php": "^7.4",
+		"php": "^7.4|^8.0",
 		"psb/psb-foundation": "^1.0",
 		"typo3/cms-core": "^11.5.5"
 	},
