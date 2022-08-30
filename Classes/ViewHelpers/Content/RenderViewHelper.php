@@ -75,7 +75,7 @@ class RenderViewHelper extends AbstractViewHelper
         array $arguments,
         Closure $renderChildrenClosure,
         RenderingContextInterface $renderingContext
-    ) {
+    ): mixed {
         $contentElements = $arguments['contentElements'] ?? $renderChildrenClosure();
         $uidList = [];
 

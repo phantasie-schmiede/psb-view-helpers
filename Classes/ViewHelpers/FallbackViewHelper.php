@@ -52,7 +52,7 @@ class FallbackViewHelper extends AbstractViewHelper
         array $arguments,
         Closure $renderChildrenClosure,
         RenderingContextInterface $renderingContext
-    ) {
+    ): mixed {
         foreach ($arguments['values'] as $value) {
             if (!empty($value)) {
                 return $value;

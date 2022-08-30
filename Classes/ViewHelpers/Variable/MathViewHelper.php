@@ -50,7 +50,7 @@ class MathViewHelper extends AbstractViewHelper
      * @throws JsonException
      * @throws NotFoundExceptionInterface
      */
-    public function render()
+    public function render(): mixed
     {
         $a = $this->arguments['a'];
         $b = $this->arguments['b'];
@@ -67,26 +67,13 @@ class MathViewHelper extends AbstractViewHelper
             throw new InvalidArgumentException(__CLASS__ . ': At least one argument is not numeric!', 1558773027);
         }
 
-        switch ($this->arguments['operator']) {
-            case '+':
-                $result = $a + $b;
-                break;
-            case '-':
-                $result = $a - $b;
-                break;
-            case '*':
-                $result = $a * $b;
-                break;
-            case '/':
-                $result = $a / $b;
-                break;
-            case '**':
-                $result = $a ** $b;
-                break;
-            default:
-                throw new InvalidArgumentException(__CLASS__ . ': Operator not allowed!', 1558773161);
-        }
-
-        return $result;
+        return match ($this->arguments['operator']) {
+            '+' => $a + $b,
+            '-' => $a - $b,
+            '*' => $a * $b,
+            '/' => $a / $b,
+            '**' => $a ** $b,
+            default => throw new InvalidArgumentException(__CLASS__ . ': Operator not allowed!', 1558773161),
+        };
     }
 }

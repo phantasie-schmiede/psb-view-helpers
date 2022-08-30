@@ -22,7 +22,6 @@ use Psr\Container\ContainerExceptionInterface;
 use Psr\Container\NotFoundExceptionInterface;
 use TYPO3\CMS\Extbase\Configuration\Exception\InvalidConfigurationTypeException;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
-use TYPO3Fluid\Fluid\Core\ViewHelper\Exception;
 
 /**
  * Class ConvertStringViewHelper
@@ -47,7 +46,7 @@ class ConvertStringViewHelper extends AbstractViewHelper
      * @throws JsonException
      * @throws NotFoundExceptionInterface
      */
-    public function render()
+    public function render(): mixed
     {
         return StringUtility::convertString($this->arguments['string']);
     }

@@ -18,7 +18,6 @@ namespace PSB\PsbViewHelpers\ViewHelpers\Variable;
 
 use InvalidArgumentException;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
-use TYPO3Fluid\Fluid\Core\ViewHelper\Exception;
 use function is_array;
 
 /**

@@ -58,6 +58,6 @@ class FileSizeViewHelper extends AbstractViewHelper
         $this->registerArgument('decimals', 'integer', 'number of decimals that will be shown in the formatted string',
             false, 2);
         $this->registerArgument('size', 'integer', 'file size in bytes');
-        $this->registerArgument('unit', 'string', 'enforces a specific unit', false);
+        $this->registerArgument('unit', 'string', 'enforces a specific unit');
     }
 }
