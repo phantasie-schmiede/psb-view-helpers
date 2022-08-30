@@ -9,7 +9,7 @@ $EM_CONF[$_EXTKEY] = [
         'conflicts' => [
         ],
         'depends'   => [
-            'php'            => '7.4',
+            'php'            => '7.4-8.1',
             'psb_foundation' => '1.0',
             'typo3'          => '11.5.5-11.5.99',
         ],
@@ -19,5 +19,5 @@ $EM_CONF[$_EXTKEY] = [
     'description'      => 'Collection of useful ViewHelpers',
     'state'            => 'stable',
     'title'            => 'PSbits | ViewHelpers',
-    'version'          => '1.1.0',
+    'version'          => '1.1.1',
 ];
