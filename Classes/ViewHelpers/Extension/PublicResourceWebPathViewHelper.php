@@ -23,11 +23,11 @@ use TYPO3\CMS\Core\Resource\Exception\InvalidFileException;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 
 /**
- * Class PublicWebPathViewHelper
+ * Class PublicResourceWebPathViewHelper
  *
  * @package PSB\PsbViewHelpers\ViewHelpers\Extension
  */
-class PublicWebPathViewHelper extends AbstractViewHelper
+class PublicResourceWebPathViewHelper extends AbstractViewHelper
 {
     /**
      * @param ExtensionInformationService $extensionInformationService
