@@ -45,6 +45,7 @@ class PublicWebPathViewHelper extends AbstractViewHelper
         parent::initializeArguments();
         $this->registerArgument('extensionKey', 'string', 'extension key of the extension whose public resource path should be fetched', true);
         $this->registerArgument('subdirectory', 'string', 'optional path which will be added to the public resource path', false, '');
+        $this->registerArgument('withoutLeadingSlash', 'bool', 'remove \'/\' at the beginning', false, false);
     }
 
     /**
@@ -55,7 +56,12 @@ class PublicWebPathViewHelper extends AbstractViewHelper
     public function render(): string
     {
         $extensionInformation = $this->extensionInformationService->getExtensionInformation($this->arguments['extensionKey']);
+        $path = FilePathUtility::getPublicResourceWebPath($extensionInformation, $this->arguments['subdirectory']);
 
-        return FilePathUtility::getPublicResourceWebPath($extensionInformation, $this->arguments['subdirectory']);
+        if ($this->arguments['withoutLeadingSlash']) {
+            return ltrim('/', $path);
+        }
+
+        return $path;
     }
 }
