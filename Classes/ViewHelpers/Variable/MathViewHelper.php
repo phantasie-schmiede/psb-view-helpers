@@ -63,7 +63,7 @@ class MathViewHelper extends AbstractViewHelper
             $b = StringUtility::convertString($b);
         }
 
-        if (!is_numeric($a) && !is_numeric($b)) {
+        if (!is_numeric($a) || !is_numeric($b)) {
             throw new InvalidArgumentException(__CLASS__ . ': At least one argument is not numeric!', 1558773027);
         }
 
