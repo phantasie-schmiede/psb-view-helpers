@@ -26,9 +26,6 @@ use function in_array;
  */
 class InArrayViewHelper extends AbstractViewHelper
 {
-    /**
-     * @return void
-     */
     public function initializeArguments(): void
     {
         parent::initializeArguments();
@@ -37,9 +34,6 @@ class InArrayViewHelper extends AbstractViewHelper
         $this->registerArgument('strict', 'bool', 'apply strict comparison', false, true);
     }
 
-    /**
-     * @return string
-     */
     public function render(): string
     {
         if (in_array($this->arguments['needle'], $this->arguments['haystack'], $this->arguments['strict'])) {

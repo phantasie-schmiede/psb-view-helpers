@@ -29,33 +29,39 @@ use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
  */
 class PublicResourceWebPathViewHelper extends AbstractViewHelper
 {
-    /**
-     * @param ExtensionInformationService $extensionInformationService
-     */
     public function __construct(
         protected readonly ExtensionInformationService $extensionInformationService,
     ) {
     }
 
-    /**
-     * @return void
-     */
     public function initializeArguments(): void
     {
         parent::initializeArguments();
-        $this->registerArgument('extensionKey', 'string', 'extension key of the extension whose public resource path should be fetched', true);
-        $this->registerArgument('subdirectory', 'string', 'optional path which will be added to the public resource path', false, '');
+        $this->registerArgument(
+            'extensionKey',
+            'string',
+            'extension key of the extension whose public resource path should be fetched',
+            true
+        );
+        $this->registerArgument(
+            'subdirectory',
+            'string',
+            'optional path which will be added to the public resource path',
+            false,
+            ''
+        );
         $this->registerArgument('withoutLeadingSlash', 'bool', 'remove \'/\' at the beginning', false, false);
     }
 
     /**
-     * @return string
      * @throws ImplementationException
      * @throws InvalidFileException
      */
     public function render(): string
     {
-        $extensionInformation = $this->extensionInformationService->getExtensionInformation($this->arguments['extensionKey']);
+        $extensionInformation = $this->extensionInformationService->getExtensionInformation(
+            $this->arguments['extensionKey']
+        );
         $path = FilePathUtility::getPublicResourceWebPath($extensionInformation, $this->arguments['subdirectory']);
 
         if ($this->arguments['withoutLeadingSlash']) {

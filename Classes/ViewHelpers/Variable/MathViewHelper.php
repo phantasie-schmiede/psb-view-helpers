@@ -32,9 +32,6 @@ use function is_string;
  */
 class MathViewHelper extends AbstractViewHelper
 {
-    /**
-     * @return void
-     */
     public function initializeArguments(): void
     {
         parent::initializeArguments();
@@ -44,13 +41,12 @@ class MathViewHelper extends AbstractViewHelper
     }
 
     /**
-     * @return mixed
      * @throws ContainerExceptionInterface
      * @throws InvalidConfigurationTypeException
      * @throws JsonException
      * @throws NotFoundExceptionInterface
      */
-    public function render(): mixed
+    public function render(): float|int|string
     {
         $a = $this->arguments['a'];
         $b = $this->arguments['b'];
@@ -68,11 +64,11 @@ class MathViewHelper extends AbstractViewHelper
         }
 
         return match ($this->arguments['operator']) {
-            '+' => $a + $b,
-            '-' => $a - $b,
-            '*' => $a * $b,
-            '/' => $a / $b,
-            '**' => $a ** $b,
+            '+'     => $a + $b,
+            '-'     => $a - $b,
+            '*'     => $a * $b,
+            '/'     => $a / $b,
+            '**'    => $a ** $b,
             default => throw new InvalidArgumentException(__CLASS__ . ': Operator not allowed!', 1558773161),
         };
     }

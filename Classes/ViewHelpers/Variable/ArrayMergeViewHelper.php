@@ -27,9 +27,6 @@ use function is_array;
  */
 class ArrayMergeViewHelper extends AbstractViewHelper
 {
-    /**
-     * @return void
-     */
     public function initializeArguments(): void
     {
         parent::initializeArguments();
@@ -38,21 +35,17 @@ class ArrayMergeViewHelper extends AbstractViewHelper
         $this->registerArgument('overwrite', 'boolean', 'overwrites the variable if already existing', false, false);
     }
 
-    /**
-     * @return void
-     */
     public function render(): void
     {
         $templateVariableContainer = $this->renderingContext->getVariableProvider();
 
         if (!$this->arguments['overwrite'] && $templateVariableContainer->exists($this->arguments['as'])) {
             throw new InvalidArgumentException(
-                __CLASS__ . ': Variable "' . $this->arguments['as'] . '" already exists!',
-                1549520834
+                __CLASS__ . ': Variable "' . $this->arguments['as'] . '" already exists!', 1549520834
             );
         }
 
-        array_walk($this->arguments['arrays'], static function (&$value) {
+        array_walk($this->arguments['arrays'], static function(&$value) {
             if (!is_array($value)) {
                 $value = [];
             }
