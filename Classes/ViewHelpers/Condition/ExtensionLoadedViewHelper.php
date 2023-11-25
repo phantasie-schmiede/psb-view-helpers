@@ -27,26 +27,19 @@ use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
  */
 class ExtensionLoadedViewHelper extends AbstractViewHelper
 {
-    /**
-     * @var bool
-     */
     protected $escapeOutput = false;
 
-    /**
-     * @return void
-     */
     public function initializeArguments(): void
     {
         parent::initializeArguments();
         $this->registerArgument('extensionKey', 'string', 'Key or name of the extension which shall be checked.', true);
     }
 
-    /**
-     * @return string
-     */
     public function render(): string
     {
-        if (ExtensionManagementUtility::isLoaded(GeneralUtility::camelCaseToLowerCaseUnderscored($this->arguments['extensionKey']))) {
+        if (ExtensionManagementUtility::isLoaded(
+            GeneralUtility::camelCaseToLowerCaseUnderscored($this->arguments['extensionKey'])
+        )) {
             return $this->renderChildren();
         }
 

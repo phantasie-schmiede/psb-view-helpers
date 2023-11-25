@@ -18,7 +18,6 @@ namespace PSB\PsbViewHelpers\ViewHelpers\Variable;
 
 use InvalidArgumentException;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
-use TYPO3Fluid\Fluid\Core\ViewHelper\Exception;
 
 /**
  * Class IncrementViewHelper
@@ -27,9 +26,6 @@ use TYPO3Fluid\Fluid\Core\ViewHelper\Exception;
  */
 class IncrementViewHelper extends AbstractViewHelper
 {
-    /**
-     * @return void
-     */
     public function initializeArguments(): void
     {
         parent::initializeArguments();
@@ -37,9 +33,6 @@ class IncrementViewHelper extends AbstractViewHelper
         $this->registerArgument('variable', 'string', 'variable to be incremented', true);
     }
 
-    /**
-     * @return void
-     */
     public function render(): void
     {
         $templateVariableContainer = $this->renderingContext->getVariableProvider();
@@ -53,8 +46,7 @@ class IncrementViewHelper extends AbstractViewHelper
 
         if (!is_numeric($this->arguments['step'])) {
             throw new InvalidArgumentException(
-                __CLASS__ . ': Argument "step" is not numeric (value: "' . $this->arguments['step'] . '")!',
-                1549455466
+                __CLASS__ . ': Argument "step" is not numeric (value: "' . $this->arguments['step'] . '")!', 1549455466
             );
         }
 
@@ -62,12 +54,13 @@ class IncrementViewHelper extends AbstractViewHelper
 
         if (!is_numeric($value)) {
             throw new InvalidArgumentException(
-                __CLASS__ . ': Variable "' . $this->arguments['variable'] . '" is not numeric!',
-                1549454962
+                __CLASS__ . ': Variable "' . $this->arguments['variable'] . '" is not numeric!', 1549454962
             );
         }
 
-        $templateVariableContainer->add($this->arguments['variable'],
-            $value + $this->arguments['step']);
+        $templateVariableContainer->add(
+            $this->arguments['variable'],
+            $value + $this->arguments['step']
+        );
     }
 }

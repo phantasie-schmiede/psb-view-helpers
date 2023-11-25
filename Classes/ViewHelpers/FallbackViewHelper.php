@@ -41,18 +41,11 @@ use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
  */
 class FallbackViewHelper extends AbstractViewHelper
 {
-    /**
-     * @param array                     $arguments
-     * @param Closure                   $renderChildrenClosure
-     * @param RenderingContextInterface $renderingContext
-     *
-     * @return mixed|null
-     */
     public static function renderStatic(
-        array $arguments,
-        Closure $renderChildrenClosure,
-        RenderingContextInterface $renderingContext
-    ) {
+        array                     $arguments,
+        Closure                   $renderChildrenClosure,
+        RenderingContextInterface $renderingContext,
+    ): mixed {
         foreach ($arguments['values'] as $value) {
             if (!empty($value)) {
                 return $value;
@@ -62,9 +55,6 @@ class FallbackViewHelper extends AbstractViewHelper
         return null;
     }
 
-    /**
-     * @return void
-     */
     public function initializeArguments(): void
     {
         parent::initializeArguments();

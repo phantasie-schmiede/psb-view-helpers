@@ -27,19 +27,11 @@ class LoopViewHelper extends AbstractViewHelper
 {
     /**
      * As this ViewHelper renders HTML, the output must not be escaped.
-     *
-     * @var bool
      */
     protected $escapeOutput = false;
 
-    /**
-     * @var array
-     */
     private array $variableBackups;
 
-    /**
-     * @return void
-     */
     public function initializeArguments(): void
     {
         parent::initializeArguments();
@@ -48,16 +40,18 @@ class LoopViewHelper extends AbstractViewHelper
         $this->registerArgument('iterations', 'int', 'Number of loops');
     }
 
-    /**
-     * @return string
-     */
     public function render(): string
     {
         $content = '';
         $renderChildrenClosure = $this->buildRenderChildrenClosure();
         $templateVariableContainer = $this->renderingContext->getVariableProvider();
 
-        $this->backupVariables([$this->arguments['cycle'], $this->arguments['index']]);
+        $this->backupVariables(
+            [
+                $this->arguments['cycle'],
+                $this->arguments['index'],
+            ]
+        );
 
         for ($i = 0; $i < $this->arguments['iterations']; $i++) {
             $templateVariableContainer->add($this->arguments['cycle'], $i + 1);
@@ -67,16 +61,16 @@ class LoopViewHelper extends AbstractViewHelper
             $templateVariableContainer->remove($this->arguments['index']);
         }
 
-        $this->restoreVariables([$this->arguments['cycle'], $this->arguments['index']]);
+        $this->restoreVariables(
+            [
+                $this->arguments['cycle'],
+                $this->arguments['index'],
+            ]
+        );
 
         return $content;
     }
 
-    /**
-     * @param array $variables
-     *
-     * @return void
-     */
     private function backupVariables(array $variables): void
     {
         $templateVariableContainer = $this->renderingContext->getVariableProvider();
@@ -88,11 +82,6 @@ class LoopViewHelper extends AbstractViewHelper
         }
     }
 
-    /**
-     * @param array $variables
-     *
-     * @return void
-     */
     private function restoreVariables(array $variables): void
     {
         $templateVariableContainer = $this->renderingContext->getVariableProvider();

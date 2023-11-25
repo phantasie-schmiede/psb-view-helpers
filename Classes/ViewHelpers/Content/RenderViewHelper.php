@@ -54,28 +54,18 @@ use function is_string;
  */
 class RenderViewHelper extends AbstractViewHelper
 {
-    /**
-     * @var bool
-     */
     protected $escapeChildren = false;
 
-    /**
-     * @var bool
-     */
     protected $escapeOutput = false;
 
     /**
-     * @param array                     $arguments
-     * @param Closure                   $renderChildrenClosure
-     * @param RenderingContextInterface $renderingContext
-     *
-     * @return mixed returns the rendered HTML (unescaped, no format-ViewHelper needed)
+     * Returns the rendered HTML (unescaped, no format-ViewHelper needed).
      */
     public static function renderStatic(
-        array $arguments,
-        Closure $renderChildrenClosure,
-        RenderingContextInterface $renderingContext
-    ) {
+        array                     $arguments,
+        Closure                   $renderChildrenClosure,
+        RenderingContextInterface $renderingContext,
+    ): string {
         $contentElements = $arguments['contentElements'] ?? $renderChildrenClosure();
         $uidList = [];
 
@@ -84,21 +74,13 @@ class RenderViewHelper extends AbstractViewHelper
                 $uidList[] = $contentElements->getUid();
                 break;
             case $contentElements instanceof ObjectStorage:
-                foreach ($contentElements as $contentElement) {
-                    if (!$contentElement instanceof AbstractEntity) {
-                        throw new RuntimeException(__CLASS__ . ': ObjectStorage has to contain only domain models that extend AbstractEntity!',
-                            1651223157);
-                    }
-
-                    $uidList[] = $contentElement->getUid();
-                }
-
-                break;
             case $contentElements instanceof QueryResultInterface:
                 foreach ($contentElements as $contentElement) {
                     if (!$contentElement instanceof AbstractEntity) {
-                        throw new RuntimeException(__CLASS__ . ': QueryResult has to contain only domain models that extend AbstractEntity!',
-                            1651223524);
+                        throw new RuntimeException(
+                            __CLASS__ . ': ObjectStorage has to contain only domain models that extend AbstractEntity!',
+                            1651223157
+                        );
                     }
 
                     $uidList[] = $contentElement->getUid();
@@ -112,8 +94,10 @@ class RenderViewHelper extends AbstractViewHelper
                     } elseif (true === is_int($contentElement)) {
                         $uidList[] = $contentElement;
                     } else {
-                        throw new RuntimeException(__CLASS__ . ': Array has to contain only domain models that extend AbstractEntity or integer values!',
-                            1651223524);
+                        throw new RuntimeException(
+                            __CLASS__ . ': Array has to contain only domain models that extend AbstractEntity or integer values!',
+                            1651223524
+                        );
                     }
                 }
 
@@ -126,20 +110,20 @@ class RenderViewHelper extends AbstractViewHelper
         }
 
         $arguments['typoscriptObjectPath'] = 'lib.tx_psbviewhelpers.content';
-        $renderChildrenClosure = static function () use ($uidList) {
+        $renderChildrenClosure = static function() use ($uidList) {
             return implode(',', $uidList);
         };
 
         return CObjectViewHelper::renderStatic($arguments, $renderChildrenClosure, $renderingContext);
     }
 
-    /**
-     * @return void
-     */
     public function initializeArguments(): void
     {
         parent::initializeArguments();
-        $this->registerArgument('contentElements', 'mixed',
-            'A list of content elements. May be AbstractEntity, ObjectStorage, QueryResult, array, integer or comma separated list.');
+        $this->registerArgument(
+            'contentElements',
+            'mixed',
+            'A list of content elements. May be AbstractEntity, ObjectStorage, QueryResult, array, integer or comma separated list.'
+        );
     }
 }
