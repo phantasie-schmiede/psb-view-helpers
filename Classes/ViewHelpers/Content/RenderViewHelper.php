@@ -109,6 +109,10 @@ class RenderViewHelper extends AbstractViewHelper
                 $uidList = GeneralUtility::intExplode(',', $contentElements, true);
         }
 
+        // Set keys to avoid PHP warnings in CObjectViewHelper.
+        $arguments['currentValueKey'] = null;
+        $arguments['table'] = null;
+
         $arguments['typoscriptObjectPath'] = 'lib.tx_psbviewhelpers.content';
         $renderChildrenClosure = static function() use ($uidList) {
             return implode(',', $uidList);
