@@ -17,5 +17,5 @@ $EM_CONF[$_EXTKEY] = [
     'description'      => 'Collection of useful ViewHelpers',
     'state'            => 'stable',
     'title'            => 'PSbits | ViewHelpers',
-    'version'          => '2.0.1',
+    'version'          => '2.1.0',
 ];
