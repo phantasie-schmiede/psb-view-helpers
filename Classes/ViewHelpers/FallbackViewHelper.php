@@ -2,13 +2,13 @@
 declare(strict_types=1);
 
 /*
- * This file is part of PSB View Helpers.
+ * This file is part of PSBits ViewHelpers.
  *
  * For the full copyright and license information, please read the
  * LICENSE.txt file that was distributed with this source code.
  */
 
-namespace PSB\PsbViewHelpers\ViewHelpers;
+namespace PSBits\ViewHelpers\ViewHelpers;
 
 use Closure;
 use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
@@ -31,7 +31,7 @@ use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
  * The existing OrViewHelper from the fluid package is restricted to one fallback value and does check for NULL only! An
  * empty string will not trigger the alternative value.
  *
- * @package PSB\PsbViewHelpers\ViewHelpers
+ * @package PSBits\ViewHelpers\ViewHelpers
  */
 class FallbackViewHelper extends AbstractViewHelper
 {

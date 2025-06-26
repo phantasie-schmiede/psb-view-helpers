@@ -2,17 +2,17 @@
 declare(strict_types=1);
 
 /*
- * This file is part of PSB View Helpers.
+ * This file is part of PSBits ViewHelpers.
  *
  * For the full copyright and license information, please read the
  * LICENSE.txt file that was distributed with this source code.
  */
 
-namespace PSB\PsbViewHelpers\ViewHelpers\Variable;
+namespace PSBits\ViewHelpers\ViewHelpers\Variable;
 
 use InvalidArgumentException;
 use JsonException;
-use PSB\PsbFoundation\Utility\StringUtility;
+use PSBits\Foundation\Utility\StringUtility;
 use Psr\Container\ContainerExceptionInterface;
 use Psr\Container\NotFoundExceptionInterface;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
@@ -21,7 +21,7 @@ use function is_string;
 /**
  * Class MathViewHelper
  *
- * @package PSB\PsbViewHelpers\ViewHelpers\Variable
+ * @package PSBits\ViewHelpers\ViewHelpers\Variable
  */
 class MathViewHelper extends AbstractViewHelper
 {

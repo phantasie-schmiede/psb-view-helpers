@@ -2,13 +2,13 @@
 declare(strict_types=1);
 
 /*
- * This file is part of PSB View Helpers.
+ * This file is part of PSBits ViewHelpers.
  *
  * For the full copyright and license information, please read the
  * LICENSE.txt file that was distributed with this source code.
  */
 
-namespace PSB\PsbViewHelpers\ViewHelpers\Content;
+namespace PSBits\ViewHelpers\ViewHelpers\Content;
 
 use Closure;
 use RuntimeException;
@@ -44,7 +44,7 @@ use function is_string;
  * - ObjectStorage (containing AbstractEntity instances)
  * - QueryResult (containing AbstractEntity instances)
  *
- * @package PSB\PsbViewHelpers\ViewHelpers\Content
+ * @package PSBits\ViewHelpers\ViewHelpers\Content
  */
 class RenderViewHelper extends AbstractViewHelper
 {
@@ -107,7 +107,7 @@ class RenderViewHelper extends AbstractViewHelper
         $arguments['currentValueKey'] = null;
         $arguments['table'] = null;
 
-        $arguments['typoscriptObjectPath'] = 'lib.tx_psbviewhelpers.content';
+        $arguments['typoscriptObjectPath'] = 'lib.tx_viewhelpers.content';
         $renderChildrenClosure = static function() use ($uidList) {
             return implode(',', $uidList);
         };

@@ -2,24 +2,24 @@
 declare(strict_types=1);
 
 /*
- * This file is part of PSB View Helpers.
+ * This file is part of PSBits ViewHelpers.
  *
  * For the full copyright and license information, please read the
  * LICENSE.txt file that was distributed with this source code.
  */
 
-namespace PSB\PsbViewHelpers\ViewHelpers\Extension;
+namespace PSBits\ViewHelpers\ViewHelpers\Extension;
 
-use PSB\PsbFoundation\Exceptions\ImplementationException;
-use PSB\PsbFoundation\Service\ExtensionInformationService;
-use PSB\PsbFoundation\Utility\Configuration\FilePathUtility;
+use PSBits\Foundation\Exceptions\ImplementationException;
+use PSBits\Foundation\Service\ExtensionInformationService;
+use PSBits\Foundation\Utility\Configuration\FilePathUtility;
 use TYPO3\CMS\Core\Resource\Exception\InvalidFileException;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 
 /**
  * Class PublicResourceWebPathViewHelper
  *
- * @package PSB\PsbViewHelpers\ViewHelpers\Extension
+ * @package PSBits\ViewHelpers\ViewHelpers\Extension
  */
 class PublicResourceWebPathViewHelper extends AbstractViewHelper
 {

@@ -1,5 +1,5 @@
-lib.tx_psbviewhelpers.content = RECORDS
-lib.tx_psbviewhelpers.content {
+lib.tx_viewhelpers.content = RECORDS
+lib.tx_viewhelpers.content {
   dontCheckPid = 1
   source.current = 1
   tables = tt_content

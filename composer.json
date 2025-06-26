@@ -8,12 +8,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "PSB\\PsbViewHelpers\\": "Classes/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "PSB\\PsbViewHelpers\\Tests\\": "Tests/"
+            "PSBits\\ViewHelpers\\": "Classes/"
         }
     },
     "config": {
@@ -24,9 +19,8 @@
     "description": "Collection of useful ViewHelpers",
     "extra": {
         "typo3/cms": {
-            "app-dir": ".Build",
             "cms-package-dir": "{$vendor-dir}/typo3/cms",
-            "extension-key": "psb_view_helpers",
+            "extension-key": "view_helpers",
             "web-dir": ".Build/public"
         }
     },
@@ -37,15 +31,14 @@
         "typo3"
     ],
     "license": "GPL-3.0-or-later",
-    "name": "psb/psb-view-helpers",
+    "name": "psbits/view-helpers",
     "require": {
-        "php": "^8.1",
-        "psb/psb-foundation": "^2.0",
-        "typo3/cms-core": "^12.4|^13.0"
+        "php": "^8.3",
+        "psbits/foundation": "^3.0",
+        "typo3/cms-core": "^12.4 || ^13.4"
     },
     "require-dev": {
         "roave/security-advisories": "dev-latest",
-        "typo3/testing-framework": "^8.2"
     },
     "scripts": {
         "prepare-release": [

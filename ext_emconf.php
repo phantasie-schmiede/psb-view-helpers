@@ -8,14 +8,14 @@ $EM_CONF[$_EXTKEY] = [
     'constraints'      => [
         'conflicts' => [],
         'depends'   => [
-            'php'            => '8.1',
-            'psb_foundation' => '2.0',
-            'typo3'          => '12.4.0-13.4.99',
+            'foundation' => '3.0',
+            'php'        => '8.3',
+            'typo3'      => '12.4.0-13.4.99'
         ],
         'suggests'  => [],
     ],
     'description'      => 'Collection of useful ViewHelpers',
     'state'            => 'stable',
-    'title'            => 'PSbits | ViewHelpers',
-    'version'          => '2.1.0',
+    'title'            => 'PSBits | ViewHelpers',
+    'version'          => '3.0.0',
 ];

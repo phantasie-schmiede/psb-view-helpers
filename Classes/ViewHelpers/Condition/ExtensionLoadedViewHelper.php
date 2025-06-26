@@ -2,13 +2,13 @@
 declare(strict_types=1);
 
 /*
- * This file is part of PSB View Helpers.
+ * This file is part of PSBits ViewHelpers.
  *
  * For the full copyright and license information, please read the
  * LICENSE.txt file that was distributed with this source code.
  */
 
-namespace PSB\PsbViewHelpers\ViewHelpers\Condition;
+namespace PSBits\ViewHelpers\ViewHelpers\Condition;
 
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -17,7 +17,7 @@ use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 /**
  * Class ExtensionLoadedViewHelper
  *
- * @package PSB\PsbViewHelpers\ViewHelpers\Conditions
+ * @package PSBits\ViewHelpers\ViewHelpers\Conditions
  */
 class ExtensionLoadedViewHelper extends AbstractViewHelper
 {

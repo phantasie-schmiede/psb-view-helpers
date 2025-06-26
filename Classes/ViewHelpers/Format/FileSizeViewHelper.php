@@ -2,16 +2,16 @@
 declare(strict_types=1);
 
 /*
- * This file is part of PSB View Helpers.
+ * This file is part of PSBits ViewHelpers.
  *
  * For the full copyright and license information, please read the
  * LICENSE.txt file that was distributed with this source code.
  */
 
-namespace PSB\PsbViewHelpers\ViewHelpers\Format;
+namespace PSBits\ViewHelpers\ViewHelpers\Format;
 
 use Closure;
-use PSB\PsbFoundation\Utility\FileUtility;
+use PSBits\Foundation\Utility\FileUtility;
 use TYPO3\CMS\Core\Context\Exception\AspectNotFoundException;
 use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
@@ -19,7 +19,7 @@ use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 /**
  * Class FileSizeViewHelper
  *
- * @package PSB\PsbViewHelpers\ViewHelpers\Format
+ * @package PSBits\ViewHelpers\ViewHelpers\Format
  */
 class FileSizeViewHelper extends AbstractViewHelper
 {
